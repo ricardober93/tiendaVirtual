@@ -1,0 +1,163 @@
+div.header {
+    display: flex;
+    align-content: center;
+}
+
+div.header a {
+    width: 50px;
+    height: 50px;
+}
+
+div.header h1.titulo-d {
+    height: 50px;
+    line-height: 50px;
+    margin-left: .6em;
+}
+
+.nuevo-usuario {
+    margin-top: 3em;
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: self-start;
+}
+
+div.form-nuevo-usuario {
+    width: 100%;
+    margin-top: 1.4em;
+    display: grid;
+    row-gap: 1.1em;
+}
+
+div.form-nuevo-usuario input, div.form-nuevo-producto input {
+    border: 1px solid #665C84;
+    border-radius: 10px;
+    height: 3em;
+    width: 20em;
+    padding: .4em;
+}
+
+div.form-nuevo-usuario button, div.form-nuevo-producto button {
+    border: none;
+    background-color: #665C84;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+
+
+div.form-nuevo-producto {
+    width: 100%;
+    margin-top: 1.4em;
+    display: grid;
+    row-gap: 1.1em;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+
+
+div.form-nuevo-producto div.grid-1 {
+    width: 100%;
+}
+
+div.form-nuevo-producto div.grid-1 input, div.grid-2 input {
+    margin-bottom: 2em;
+}
+div.form-nuevo-producto div.grid-1 textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #665C84;
+}
+
+
+/* vista perfil */
+
+.perfil-container {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3em;
+}
+
+.perfil-container div.foto-perfil {
+    display: grid;
+    height: 100%;
+    margin-bottom: 5em;
+}
+
+.perfil-container div.foto-perfil div.foto {
+    display: flex;
+    align-content: center;
+}
+
+.perfil-container div.foto-perfil div.foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.perfil-container div.foto-perfil div.foto div.roles-perfil {
+    display: grid;
+    margin-left: 1.3em;
+    justify-content: left;
+    align-self: center;
+}
+
+.perfil-container div.foto-perfil div.foto div.roles-perfil h3 {
+    display: inline-block;
+    margin-bottom: 0;
+    height: 30px;
+}
+
+.perfil-container div.foto-perfil div.foto div.roles-perfil select {
+    display: block;
+    height: 30px;
+    border: none;
+}
+
+div.permisos div.check {
+  padding: 0.6em;
+}
+
+div.permisos div.check input {
+  margin-right: 0.6em;
+}
+
+div.datos{
+    display: grid;
+    column-gap: 2em;
+    width: 250px;
+}
+
+div.datos div.inputs {
+    height: 100px;
+}
+
+div.datos div.inputs label {
+    display: block;
+    font-weight: bold;
+}
+
+div.datos div.inputs input {
+    width: 300px;
+    margin-top: .4em;
+    border: none;
+    height: 40px;
+    background-color: #F9F9F9;
+}
+
+div.datos div.inputs button {
+    border: none;
+    background-color: #665C84;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 130px;
+    border-radius: 10px;
+}

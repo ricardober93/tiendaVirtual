@@ -1,0 +1,160 @@
+.dashboard {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 1fr 8fr;
+  grid-column-gap: 4em;
+}
+
+section {
+  padding: 3em;
+}
+
+section h1.titulo-d {
+  margin-bottom: 1.3em;
+}
+
+section div h3 {
+  margin-bottom: 0.9em;
+}
+
+div.container {
+  width: 80%;
+  height: 250px;
+  padding: 0 5em;
+}
+
+div.container .highcharts-root {
+  width: 70%;
+}
+
+div.ultimos-pedidos {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 4em;
+  margin-bottom: 2em;
+}
+
+.card-D {
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.ultimo-img {
+  width: 100px;
+}
+
+.body-c {
+  margin-left: 0.4em;
+  display: grid;
+  grid-gap: 0.5em;
+}
+
+.body-c h4 {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.body-c p {
+  font-size: 0.7em;
+  color: gray;
+}
+
+.body-c p {
+  font-size: 0.7em;
+  color: gray;
+}
+
+.body-c .btn-ultimo {
+  width: 70%;
+  background-color: indigo;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em 0;
+  border: none;
+}
+
+/* Panel de Usuario */
+
+div.butones-usuarios {
+  height: 2.3em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+div.butones-usuarios a {
+  border: none;
+  background-color: #665c84;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+div.table table {
+  width: 100%;
+}
+
+div.table table thead {
+  height: 2.3em;
+  background-color: #ffba5a;
+  border: none;
+    margin-bottom: .5em;
+}
+
+div.table table thead th {
+  height: 2.3em;
+
+}
+
+div.table table tbody tr {
+  height: 3em;
+  text-align: center;
+}
+
+div.table table tbody tr td a.btn-editar {
+  border: none;
+  background-color: #ffba5a;
+  color: black;
+  padding: 0.7em;
+  margin-right: 0.4em;
+  text-decoration: none;
+}
+
+div.table table tbody tr td a.btn-eliminar {
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 0.7em;
+  margin-right: 0.4em;
+  text-decoration: none;
+}
+
+/* Panel de Ventas*/
+
+div.buton-tienda {
+  height: 2.3em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2em;
+}
+
+div.buton-tienda a.btn-usuario {
+  border: none;
+  background-color: #665c84;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+}
+
