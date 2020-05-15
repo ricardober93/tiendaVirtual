@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { ListarProductos } from '../components/ListarProductos';
 import Axios from 'axios';
 
@@ -33,6 +33,9 @@ const productoMap = productosTienda.map((producto) => <Link key={producto.id} to
 
 const VerProducto = () => {
 
+    let history = useHistory();
+
+
     let current = document.querySelector('#seleccionado');
     const thumbs = document.querySelectorAll('.miniaturas img');
     const opacity = 0.5;
@@ -53,15 +56,50 @@ const VerProducto = () => {
     let { id } = useParams();
 
     const [producto, setProducto] = useState([])
+// Cuando tengamos que cambiar el estado a reduc y guardar el carrito en una lista
+    // const [ListProductos, setListProductos] = useState([])
 
 
+    const compraProducto = () => {
+        history.push('/mediospagos')
+    };
+
+   
+
+    const agregarCarrito = (producto) => {
+
+        const productoNuevo = {
+            _id: producto._id,
+            nombre:producto.nombre,
+            descripcion:producto.descripcion,
+            precio:producto.precio
+        }
+
+        if (producto) {
+            if (localStorage.getItem("carrito")  == null) {
+                const list = [];
+                list.push(productoNuevo)
+                localStorage.setItem("carrito", JSON.stringify(list))
+            } else {
+                const list = JSON.parse(localStorage.getItem("carrito"))
+                list.push(productoNuevo)
+                localStorage.setItem("carrito", JSON.stringify(list))
+            }
+        }
+
+      
+    }
+
+
+    
     useEffect(() => {
         const obtenerProducto = async () => {
-            const res = await Axios.get('http://192.168.1.3:4000/producto/' + id)
+            const res = await Axios.get('http://localhost:4000/producto/' + id)
             setProducto(res.data)
         }
         obtenerProducto()
-    }, [id])
+    }, [id]);
+
 
 
     return (
@@ -81,26 +119,14 @@ const VerProducto = () => {
                     </div>
                 </div>
                 <div className="informacion">
-                    <h1>
-                        {producto.nombre} - {producto.marca}
-                    </h1>
-                    <div className="categoria">
-                        {producto.estado}
-                    </div>
-                    <p>
-                        {producto.descripcion}
-                    </p>
-
-                    <p className="precio">
-                        $ {producto.precio}
-                    </p>
-
-                    <button>
-                        comprar ahora
-                    </button>
+                    <h1> {producto.nombre} - {producto.marca} </h1>
+                    <div className="categoria"> {producto.estado} </div>
+                    <p> {producto.descripcion} </p>
+                    <p className="precio"> $ {producto.precio} </p>
+                    <button onClick={()=>{agregarCarrito(producto)}} > Agregar a Carrito </button>
+                    <button onClick={compraProducto} > Comprar ahora </button>
                 </div>
             </section>
-
             <section className="recomendados">
                 <h2>Recomendados</h2>
                 <div className="grid-recomendados">

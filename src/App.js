@@ -18,6 +18,8 @@ import Editarperfil from './dashboard/Editarperfil';
 import NuevoProducto from './dashboard/NuevoProducto';
 import VerProducto  from './pages/VerProducto';
 import Login from './pages/Login';
+import CarritoCompra from './pages/CarritoCompra';
+import MediosPagos from './pages/MediosPagos';
 
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
       <div className="App" >
         < Navbar titulo="Tienda App" />
       </div>
-
+      
       <Switch>
         <Route exact path="/">
           <Home />
@@ -57,6 +59,12 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/carrito">
+          <CarritoCompra />
+        </Route>
+        <Route path="/mediospagos">
+          <MediosPagos />
         </Route>
       </Switch>
     </Router>

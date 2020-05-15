@@ -4,7 +4,7 @@ export const ListarProductos = ({producto}) => {
     return (
         <div className="card">
             <img src="../img-zapatos.png" alt="" />
-            <h3>{producto.nombre}</h3>
+            <h3 className="titulo">{producto.nombre}</h3>
             <div className="category">
                 <p>  $ {producto.precio}</p>
             </div>

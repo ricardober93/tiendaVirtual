@@ -11,7 +11,7 @@ function Home(){
   const [productos, setProductos] = useState([])
 
   const obtenerProductos = async() =>{
-    const res = await Axios.get('http://192.168.1.3:4000/productos');
+    const res = await Axios.get('http://localhost:4000/productos');
     setProductos(res.data)
     }
 
@@ -21,13 +21,8 @@ function Home(){
 
     return (
     <div>
-      <div className="search">
-        <input className="search" type="search" name="busqueda" id="" placeholder="¿Qué estas Buscando?" />
-        <input className="enviar" type="submit" value="Buscar" />
-      </div>
       <section className="feed">
-        
-        {
+          {
           productos ? productos.map(producto => (
             <Link to={"/producto/" + producto._id} key={producto._id} >
             <ListarProductos  producto={producto} /> </Link>

@@ -27,11 +27,12 @@ function Footer() {
                   <p>3145063381</p>
                   <p>Correo@correo.com</p>
                </div>
-            </div>
 
+            </div>
             <div className="by">
                By Dilunio.com
          </div>
+
          </div>
       </Fragment>
    )

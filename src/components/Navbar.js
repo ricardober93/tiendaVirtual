@@ -59,7 +59,7 @@ const Navbar = ({ titulo }) => {
   return (
     <Fragment>
       <header>
-        <div className="burger" onClick={navSildes}  >
+        <div className="burger" onClick={navSildes} >
           <span className="bar" ></span>
           <span className="bar" ></span>
           <span className="bar" ></span>

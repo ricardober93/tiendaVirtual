@@ -11,7 +11,12 @@ function Login() {
         password:'',
     }
     
-
+    const [registro, guardarRegistro] = useState({
+        nombre:'',
+        email:'',
+        password:'',
+        password_confirmar:''
+    })
     const [ingresarUsuario, guardarIngresarUsuario] = useState(ingresarInicial);
     const [token, setToken] = useState('');
 
@@ -47,7 +52,7 @@ function Login() {
     const SubmitEntrar = async (e) =>{
         e.preventDefault();
 
-        const res = await Axios.post('http://192.168.1.3:4000/iniciarsesion',{
+        const res = await Axios.post('http://localhost:4000/iniciarsesion',{
             email : ingresarUsuario.email,
             password : ingresarUsuario.password
         });      
@@ -58,6 +63,32 @@ function Login() {
         }
            
     }
+
+    const DatosRegistro = (e) => {
+        guardarRegistro({
+            ...registro,
+            [e.target.name]:e.target.value
+        })
+    };
+
+    const submitRegistro =  async e =>{
+        e.preventDefault()
+
+        if (registro.password_confirmar === registro.password) {
+
+         const res = await Axios.post('http://localhost:4000:4000/registro', {
+            nombre:registro.nombre,
+            email: registro.email,
+            password: registro.password
+        });
+        setToken(res.data.token);
+            if(token) {
+                guardarToken(token);
+                history.push("/");
+            }            
+        }
+    }
+
 
     return (
         <Fragment>
@@ -70,13 +101,11 @@ function Login() {
                         <ul className="tabs" id="simpleTab">
                             <li
                                 className="tab_item active_tab_item"
-                                onClick={handleTabs}
-                            >
+                                onClick={handleTabs}>
                                 Entrar
                            </li>
                             <li className="tab_item"
-                                onClick={handleTabs}
-                            >
+                                onClick={handleTabs}>
                                 Registrarse
                            </li>
                         </ul>
@@ -106,26 +135,30 @@ function Login() {
                                 </form>
                             </div>
                             <div className="panel_item">
-                                <form>
+                                <form onSubmit={submitRegistro}>
                                     <input
                                         name="nombre"
                                         type="text"
                                         placeholder="Joe Doe"
+                                        onChange={DatosRegistro}
                                         required />
                                     <input
                                         name="email"
                                         type="email"
                                         placeholder="Correo@correo.com"
+                                        onChange={DatosRegistro}
                                         required />
                                     <input
                                         name="password"
                                         type="password"
                                         placeholder="password"
+                                        onChange={DatosRegistro}
                                         required />
                                     <input
                                         name="password_confirmar"
                                         type="password"
                                         placeholder="confirmar password"
+                                        onChange={DatosRegistro}
                                         required />
                                     <input
                                         className="btn "

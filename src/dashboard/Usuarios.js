@@ -25,7 +25,7 @@ const ListaUser = usuariosDB.map((user) =>
       <td>{user.nombre}</td>
       <td>{user.rol}</td>
       <td>
-         <Link className="btn-editar" to="editarperfil" >Editar</Link>
+         <Link className="btn-editar" >Editar</Link>
          <Link className="btn-eliminar" >Eliminar</Link>
       </td>
    </tr>
